@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace PoP\GenericCustomPosts\TypeResolvers;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
-use PoP\CustomPosts\TypeResolvers\CustomPostTypeResolver;
+use PoP\CustomPosts\TypeResolvers\AbstractCustomPostTypeResolver;
+use PoP\GenericCustomPosts\TypeDataLoaders\GenericCustomPostTypeDataLoader;
 
-class GenericCustomPostTypeResolver extends CustomPostTypeResolver
+class GenericCustomPostTypeResolver extends AbstractCustomPostTypeResolver
 {
     public const NAME = 'GenericCustomPost';
 
@@ -20,5 +21,10 @@ class GenericCustomPostTypeResolver extends CustomPostTypeResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         return $translationAPI->__('Any custom post, with or without its own type for the schema', 'customposts');
+    }
+
+    public function getTypeDataLoaderClass(): string
+    {
+        return GenericCustomPostTypeDataLoader::class;
     }
 }

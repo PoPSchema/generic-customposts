@@ -124,7 +124,7 @@ class RootGenericCustomPostFieldResolver extends AbstractQueryableFieldResolver
         switch ($fieldName) {
             case 'genericCustomPost':
                 return [
-                    'custom-post-types' => ['post', 'page', 'attachment'],
+                    'custom-post-types' => ['post', 'page'],
                     'include' => [$fieldArgs['id']],
                     'custom-post-status' => [
                         Status::PUBLISHED,
@@ -133,14 +133,14 @@ class RootGenericCustomPostFieldResolver extends AbstractQueryableFieldResolver
             case 'genericCustomPosts':
                 return [
                     'limit' => ComponentConfiguration::getGenericCustomPostListDefaultLimit(),
-                    'custom-post-types' => ['post', 'page', 'attachment'],
+                    'custom-post-types' => ['post', 'page'],
                     'custom-post-status' => [
                         Status::PUBLISHED,
                     ],
                 ];
             case 'genericCustomPostCount':
                 return [
-                    'custom-post-types' => ['post', 'page', 'attachment'],
+                    'custom-post-types' => ['post', 'page'],
                     'custom-post-status' => [
                         Status::PUBLISHED,
                     ],
