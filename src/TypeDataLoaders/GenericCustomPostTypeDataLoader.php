@@ -29,7 +29,7 @@ class GenericCustomPostTypeDataLoader extends AbstractCustomPostTypeDataLoader
     {
         return [
             GenericCustomPostRelationalFieldDataloadModuleProcessor::class,
-            GenericCustomPostRelationalFieldDataloadModuleProcessor::MODULE_DATALOAD_RELATIONALFIELDS_GENERICCUSTOMPOSTCOUNT
+            GenericCustomPostRelationalFieldDataloadModuleProcessor::MODULE_DATALOAD_RELATIONALFIELDS_GENERICCUSTOMPOSTLIST
         ];
     }
 }
