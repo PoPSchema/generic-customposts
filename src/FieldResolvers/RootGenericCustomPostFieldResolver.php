@@ -121,30 +121,29 @@ class RootGenericCustomPostFieldResolver extends AbstractQueryableFieldResolver
 
     protected function getQuery(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = []): array
     {
+        $query = [
+            'custom-post-types' => ComponentConfiguration::getGenericCustomPostTypes(),
+            'custom-post-status' => [
+                Status::PUBLISHED,
+            ],
+        ];
         switch ($fieldName) {
             case 'genericCustomPost':
-                return [
-                    'custom-post-types' => ['post', 'page'],
-                    'include' => [$fieldArgs['id']],
-                    'custom-post-status' => [
-                        Status::PUBLISHED,
-                    ],
-                ];
+                return array_merge(
+                    $query,
+                    [
+                        'include' => [$fieldArgs['id']],
+                    ]
+                );
             case 'genericCustomPosts':
-                return [
-                    'limit' => ComponentConfiguration::getGenericCustomPostListDefaultLimit(),
-                    'custom-post-types' => ['post', 'page'],
-                    'custom-post-status' => [
-                        Status::PUBLISHED,
-                    ],
-                ];
+                return array_merge(
+                    $query,
+                    [
+                        'limit' => ComponentConfiguration::getGenericCustomPostListDefaultLimit(),
+                    ]
+                );
             case 'genericCustomPostCount':
-                return [
-                    'custom-post-types' => ['post', 'page'],
-                    'custom-post-status' => [
-                        Status::PUBLISHED,
-                    ],
-                ];
+                return $query;
         }
         return [];
     }

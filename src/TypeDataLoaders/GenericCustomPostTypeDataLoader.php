@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PoP\GenericCustomPosts\TypeDataLoaders;
 
+use PoP\GenericCustomPosts\ComponentConfiguration;
 use PoP\CustomPosts\TypeDataLoaders\AbstractCustomPostTypeDataLoader;
 use PoP\GenericCustomPosts\ModuleProcessors\GenericCustomPostRelationalFieldDataloadModuleProcessor;
 
@@ -20,7 +21,7 @@ class GenericCustomPostTypeDataLoader extends AbstractCustomPostTypeDataLoader
         return array_merge(
             parent::getObjectQuery($ids),
             [
-                'custom-post-types' => ['post', 'page'],
+                'custom-post-types' => ComponentConfiguration::getGenericCustomPostTypes(),
             ]
         );
     }
