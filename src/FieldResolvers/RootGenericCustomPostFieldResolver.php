@@ -14,7 +14,7 @@ use PoP\CustomPosts\Facades\CustomPostTypeAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractQueryableFieldResolver;
 use PoP\GenericCustomPosts\TypeResolvers\GenericCustomPostTypeResolver;
-use PoP\CustomPosts\ModuleProcessors\CustomPostRelationalFieldDataloadModuleProcessor;
+use PoP\GenericCustomPosts\ModuleProcessors\GenericCustomPostRelationalFieldDataloadModuleProcessor;
 
 /**
  * Add fields to the Root for querying for generic custom posts
@@ -111,10 +111,10 @@ class RootGenericCustomPostFieldResolver extends AbstractQueryableFieldResolver
     {
         switch ($fieldName) {
             case 'genericCustomPostCount':
-                // return [
-                //     CustomPostRelationalFieldDataloadModuleProcessor::class,
-                //     CustomPostRelationalFieldDataloadModuleProcessor::MODULE_DATALOAD_RELATIONALFIELDS_UNIONCUSTOMPOSTCOUNT
-                // ];
+                return [
+                    GenericCustomPostRelationalFieldDataloadModuleProcessor::class,
+                    GenericCustomPostRelationalFieldDataloadModuleProcessor::MODULE_DATALOAD_RELATIONALFIELDS_GENERICCUSTOMPOSTCOUNT
+                ];
         }
         return parent::getFieldDefaultFilterDataloadingModule($typeResolver, $fieldName, $fieldArgs);
     }

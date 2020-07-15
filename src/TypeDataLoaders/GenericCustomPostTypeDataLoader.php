@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace PoP\GenericCustomPosts\TypeDataLoaders;
 
 use PoP\CustomPosts\TypeDataLoaders\AbstractCustomPostTypeDataLoader;
-use PoP\CustomPosts\ModuleProcessors\CustomPostRelationalFieldDataloadModuleProcessor;
+use PoP\GenericCustomPosts\ModuleProcessors\GenericCustomPostRelationalFieldDataloadModuleProcessor;
 
 class GenericCustomPostTypeDataLoader extends AbstractCustomPostTypeDataLoader
 {
@@ -24,11 +24,11 @@ class GenericCustomPostTypeDataLoader extends AbstractCustomPostTypeDataLoader
             ]
         );
     }
-    // public function getFilterDataloadingModule(): ?array
-    // {
-    //     return [
-    //         CustomPostRelationalFieldDataloadModuleProcessor::class,
-    //         CustomPostRelationalFieldDataloadModuleProcessor::MODULE_DATALOAD_RELATIONALFIELDS_UNIONCUSTOMPOSTLIST
-    //     ];
-    // }
+    public function getFilterDataloadingModule(): ?array
+    {
+        return [
+            GenericCustomPostRelationalFieldDataloadModuleProcessor::class,
+            GenericCustomPostRelationalFieldDataloadModuleProcessor::MODULE_DATALOAD_RELATIONALFIELDS_GENERICCUSTOMPOSTCOUNT
+        ];
+    }
 }
