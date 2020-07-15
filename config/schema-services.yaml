@@ -1,0 +1,8 @@
+services:
+    PoP\GenericCustomPosts\FieldResolvers\:
+        resource: '../src/FieldResolvers/*'
+        public: true
+
+    PoP\GenericCustomPosts\TypeResolvers\:
+        resource: '../src/TypeResolvers/*'
+        public: true
