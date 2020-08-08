@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace PoP\GenericCustomPosts\FieldResolvers;
+namespace PoPSchema\GenericCustomPosts\FieldResolvers;
 
-use PoP\CustomPosts\Types\Status;
+use PoPSchema\CustomPosts\Types\Status;
 use PoP\Engine\TypeResolvers\RootTypeResolver;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
 use PoP\Translation\Facades\TranslationAPIFacade;
-use PoP\GenericCustomPosts\ComponentConfiguration;
-use PoP\CustomPosts\Facades\CustomPostTypeAPIFacade;
+use PoPSchema\GenericCustomPosts\ComponentConfiguration;
+use PoPSchema\CustomPosts\Facades\CustomPostTypeAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractQueryableFieldResolver;
-use PoP\GenericCustomPosts\TypeResolvers\GenericCustomPostTypeResolver;
-use PoP\GenericCustomPosts\ModuleProcessors\GenericCustomPostRelationalFieldDataloadModuleProcessor;
+use PoPSchema\GenericCustomPosts\TypeResolvers\GenericCustomPostTypeResolver;
+use PoPSchema\GenericCustomPosts\ModuleProcessors\GenericCustomPostRelationalFieldDataloadModuleProcessor;
 
 /**
  * Add fields to the Root for querying for generic custom posts

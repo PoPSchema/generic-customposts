@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PoP\GenericCustomPosts\TypeDataLoaders;
+namespace PoPSchema\GenericCustomPosts\TypeDataLoaders;
 
-use PoP\GenericCustomPosts\ComponentConfiguration;
-use PoP\CustomPosts\TypeDataLoaders\AbstractCustomPostTypeDataLoader;
-use PoP\GenericCustomPosts\ModuleProcessors\GenericCustomPostRelationalFieldDataloadModuleProcessor;
+use PoPSchema\GenericCustomPosts\ComponentConfiguration;
+use PoPSchema\CustomPosts\TypeDataLoaders\AbstractCustomPostTypeDataLoader;
+use PoPSchema\GenericCustomPosts\ModuleProcessors\GenericCustomPostRelationalFieldDataloadModuleProcessor;
 
 class GenericCustomPostTypeDataLoader extends AbstractCustomPostTypeDataLoader
 {

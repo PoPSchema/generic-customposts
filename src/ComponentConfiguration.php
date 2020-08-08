@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\GenericCustomPosts;
+namespace PoPSchema\GenericCustomPosts;
 
 use PoP\ComponentModel\ComponentConfiguration\EnvironmentValueHelpers;
 use PoP\ComponentModel\ComponentConfiguration\ComponentConfigurationTrait;
