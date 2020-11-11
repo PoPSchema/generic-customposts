@@ -11,7 +11,7 @@ use PoPSchema\GenericCustomPosts\ModuleProcessors\GenericCustomPostRelationalFie
 class GenericCustomPostTypeDataLoader extends AbstractCustomPostTypeDataLoader
 {
     /**
-     * Override the custom-post-types from the parent
+     * Override the custompost-types from the parent
      *
      * @param array $ids
      * @return array
@@ -21,7 +21,7 @@ class GenericCustomPostTypeDataLoader extends AbstractCustomPostTypeDataLoader
         return array_merge(
             parent::getObjectQuery($ids),
             [
-                'custom-post-types' => ComponentConfiguration::getGenericCustomPostTypes(),
+                'custompost-types' => ComponentConfiguration::getGenericCustomPostTypes(),
             ]
         );
     }

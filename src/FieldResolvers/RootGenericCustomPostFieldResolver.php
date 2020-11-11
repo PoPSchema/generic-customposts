@@ -131,8 +131,8 @@ class RootGenericCustomPostFieldResolver extends AbstractQueryableFieldResolver
         array $fieldArgs = []
     ): array {
         $query = [
-            'custom-post-types' => ComponentConfiguration::getGenericCustomPostTypes(),
-            'custom-post-status' => [
+            'custompost-types' => ComponentConfiguration::getGenericCustomPostTypes(),
+            'status' => [
                 Status::PUBLISHED,
             ],
         ];
